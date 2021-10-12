@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./canvas.js"></script>
+    <title>Canvas Demo</title>
+    <style>
+      * {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="500" height="300"></canvas>
+  </body>
+</html>
+
+<script>
+  const canvas = document.querySelector("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let width = canvas.width,
+    height = canvas.height;
+  // for retina screen 
+  if (window.devicePixelRatio) {
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    canvas.height = height * window.devicePixelRatio;
+    canvas.width = width * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  ctx.fillStyle = "rgb(250, 241, 224)";
+  ctx.fillRect(0, 0, width, height);
+
+  let param = {
+    // bezier值 参数参考 https://www.cssportal.com/css-cubic-bezier-generator/
+    bezier: [0.7, 0, 0.8, 1],
+    // 顶点相对于画布的位置
+    vertex: { x: 250, y: 120 },
+    // 起点相对于画布的位置
+    begin: { x: 0, y: 300 },
+    // 终点相对于画布的位置
+    end : { x: 500, y: 300 },
+  }
+  drawGaussian(ctx, 0.8, param);
+</script>
