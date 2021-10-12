@@ -5,6 +5,7 @@ Use `bezier curve` to draw `Gaussian graphical ` with `percent`
 
 ## Formula 
 [Refenerce](https://zh.wikipedia.org/wiki/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A)
+
 ![preview](https://wikimedia.org/api/rest_v1/media/math/render/svg/671f651757c2e7efb48da5801e835d3cafe4eeba)
 
 
